@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>双生，遇见另一半的美好：）</title>
+  <link rel="icon" href="_media/favicon.ico">
+  <meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
+  <meta name="description" content="A magical documentation generator.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/vue.css" title="vue">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/dark.css" title="dark" disabled>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/buble.css" title="buble" disabled>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/pure.css" title="pure" disabled>
+  <style>
+    nav.app-nav li ul {
+      min-width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Loading ...</div>
+</body>
+<script>
+  window.$docsify = {
+    alias: {
+      '/de-de/changelog': '/changelog',
+      '/zh-cn/changelog': '/changelog'
+    },
+    auto2top: true,
+    coverpage: true,
+    executeScript: true,
+    loadSidebar: true,
+    loadNavbar: true,
+    mergeNavbar: true,
+    maxLevel: 4,
+    subMaxLevel: 2,
+    name: '双生',
+    search: {
+      noData: {
+        '/de-de/': 'Keine Ergebnisse!',
+        '/zh-cn/': '没有结果!',
+        '/': 'No results!'
+      },
+      paths: 'auto',
+      placeholder: {
+        '/de-de/': 'Suche',
+        '/zh-cn/': '搜索',
+        '/': 'Search'
+      }
+    },
+    formatUpdated: '{MM}/{DD} {HH}:{mm}',
+    plugins: [
+      function(hook, vm) {
+        hook.beforeEach(function (html) {
+          var url = 'https://github.com/two-life/two-life.github.io/blob/master/docs' + vm.route.file
+          var editHtml = '[:memo: Edit Document](' + url + ')\n'
+
+          return editHtml
+            + html
+            + '\n----\n'
+            + 'Last modified {docsify-updated} '
+            + editHtml
+        })
+      }
+    ]
+  }
+</script>
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-nginx.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+</html>
