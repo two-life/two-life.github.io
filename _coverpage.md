@@ -4,9 +4,9 @@
 
 > Nice to meet you ：）
 
-- Simple and lightweight (~18kB gzipped)
-- No statically built html files
-- Multiple themes
+- Write your diary to record a special day
+- Share your diary with the opposite sex
+- Find your other half
 
 [GitHub](https://github.com/airingursb/two-life)
 [Get Started](#docsify)
